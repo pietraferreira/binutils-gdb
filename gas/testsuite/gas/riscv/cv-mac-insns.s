@@ -65,3 +65,17 @@ target:
 	cv.mulurn t0, t1, t2, 0
 	cv.mulurn t4, t2, t0, 11
 	cv.mulurn t3, t5, t1, 31
+
+  # Pseudo-instructions
+	cv.mulhhsn t0, t1, t2, 0
+	cv.mulhhsn t4, t2, t0, 0
+	cv.mulhhsn t3, t5, t1, 0
+	cv.mulhhun t0, t1, t2, 0
+	cv.mulhhun t4, t2, t0, 0
+	cv.mulhhun t3, t5, t1, 0
+	cv.mulsn t0, t1, t2, 0
+	cv.mulsn t4, t2, t0, 0
+	cv.mulsn t3, t5, t1, 0
+	cv.mulun t0, t1, t2, 0
+	cv.mulun t4, t2, t0, 0
+	cv.mulun t3, t5, t1, 0
