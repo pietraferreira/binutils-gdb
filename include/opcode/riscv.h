@@ -107,6 +107,10 @@ static inline unsigned int riscv_insn_length (insn_t insn)
 #define EXTRACT_RVV_VC_IMM(x) \
   (RV_X(x, 20, 11))
 
+/* CORE-V Specific.  */
+#define EXTRACT_CV_MAC_UIMM5(x) \
+  (RV_X(x, 25, 5))
+
 #define ENCODE_ITYPE_IMM(x) \
   (RV_X(x, 0, 12) << 20)
 #define ENCODE_STYPE_IMM(x) \
@@ -151,6 +155,10 @@ static inline unsigned int riscv_insn_length (insn_t insn)
   (RV_X(x, 0, 10) << 20)
 #define ENCODE_RVV_VC_IMM(x) \
   (RV_X(x, 0, 11) << 20)
+
+/* CORE-V Specific.  */
+#define ENCODE_CV_MAC_UIMM5(x) \
+  (RV_X(x, 0, 5) << 25)
 
 #define VALID_ITYPE_IMM(x) (EXTRACT_ITYPE_IMM(ENCODE_ITYPE_IMM(x)) == (x))
 #define VALID_STYPE_IMM(x) (EXTRACT_STYPE_IMM(ENCODE_STYPE_IMM(x)) == (x))
@@ -388,6 +396,7 @@ enum riscv_insn_class
   INSN_CLASS_ZFHMIN_INX,
   INSN_CLASS_ZFHMIN_AND_D_INX,
   INSN_CLASS_ZFHMIN_AND_Q_INX,
+  INSN_CLASS_COREV_MAC,
   INSN_CLASS_ZBA,
   INSN_CLASS_ZBB,
   INSN_CLASS_ZBC,
