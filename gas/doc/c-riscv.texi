@@ -50,7 +50,7 @@ For the CORE-V variant of the assembler, to enable the CORE-V
 extensions, the following additional ISA options are provided:
 @itemize @bullet
 @item
-multiply-accumulate: @samp{Xcorevmac}
+multiply-accumulate: @samp{Xcvmac}
 @end itemize
 
 @cindex @samp{-misa-spec=ISAspec} option, RISC-V
