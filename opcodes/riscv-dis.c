@@ -429,6 +429,26 @@ print_insn_args (const char *oparg, insn_t l, bfd_vma pc, disassemble_info *info
 	    print (info->stream, dis_style_immediate, "0");
 	  break;
 
+	case 'x': /* Vendor-specific operands.  */
+	  switch (*++oparg)
+	    {
+	    /* Vendor-specific (CORE-V) operands.  */
+	    case 'c':
+	      switch (*++oparg)
+		{
+		  case '2':
+		    print (info->stream, dis_style_immediate, "%d",
+			   ((int) EXTRACT_CV_IS2_UIMM5 (l)));
+		    break;
+		  case '3':
+		    print (info->stream, dis_style_immediate, "%d",
+			   ((int) EXTRACT_CV_IS3_UIMM5 (l)));
+		    break;
+		}
+	      break;
+	    }
+	  break;
+
 	case 's':
 	  if ((l & MASK_JALR) == MATCH_JALR)
 	    maybe_print_address (pd, rs1, EXTRACT_ITYPE_IMM (l), 0);
