@@ -2320,6 +2320,27 @@
 #define MASK_WRS_NTO 0xffffffff
 #define MATCH_WRS_STO 0x01d00073
 #define MASK_WRS_STO 0xffffffff
+/* Vendor-specific (CORE-V) Xcvmac instructions.  */
+#define MATCH_CV_MAC       0x9000302b
+#define MATCH_CV_MSU       0x9200302b
+#define MASK_CV_MACMSU     0xfe00707f
+#define MATCH_CV_MULSN     0x405b
+#define MATCH_CV_MULHHSN   0x4000405b
+#define MATCH_CV_MULSRN    0x8000405b
+#define MATCH_CV_MULHHSRN  0xc000405b
+#define MATCH_CV_MULUN     0x505b
+#define MATCH_CV_MULHHUN   0x4000505b
+#define MATCH_CV_MULURN    0x8000505b
+#define MATCH_CV_MULHHURN  0xc000505b
+#define MATCH_CV_MACSN     0x605b
+#define MATCH_CV_MACHHSN   0x4000605b
+#define MATCH_CV_MACSRN    0x8000605b
+#define MATCH_CV_MACHHSRN  0xc000605b
+#define MATCH_CV_MACUN     0x705b
+#define MATCH_CV_MACHHUN   0x4000705b
+#define MATCH_CV_MACURN    0x8000705b
+#define MATCH_CV_MACHHURN  0xc000705b
+#define MASK_CV_MULMACN    0xc000707f
 /* Vendor-specific (T-Head) XTheadBa instructions.  */
 #define MATCH_TH_ADDSL 0x0000100b
 #define MASK_TH_ADDSL 0xf800707f
